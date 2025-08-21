@@ -3,7 +3,7 @@ import {
   FileText, 
   Folder, 
   MoreVertical, 
-  Share, 
+  Share2, 
   Download, 
   Trash2, 
   Edit, 
@@ -199,7 +199,7 @@ export function FileList({
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end" className="w-48">
                       <DropdownMenuItem onClick={() => onItemShare(item.id)}>
-                        <Share className="h-4 w-4 mr-2" />
+                        <Share2 className="h-4 w-4 mr-2" />
                         Share
                       </DropdownMenuItem>
                       <DropdownMenuItem onClick={() => onItemDownload(item.id)}>
