@@ -182,7 +182,7 @@ export function FileManagerHeader({
           {/* Action Buttons */}
           <Button onClick={onUploadFile} size="sm" className="gap-2 bg-white border border-[#605BFF] text-[#605BFF] hover:bg-[#605BFF] hover:text-white">
             <Upload className="h-4 w-4" />
-            Upload
+            Import
           </Button>
           
           <DropdownMenu>
