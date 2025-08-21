@@ -177,7 +177,7 @@ export function FileGrid({
                     )} 
                   />
                 ) : (
-                  <FileText className="w-10 h-10 text-blue-500" />
+                  <FileText className="w-10 h-10 text-[#605BFF]" />
                 )}
               </div>
 
