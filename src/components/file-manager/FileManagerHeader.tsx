@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { 
   Search, 
-  Grid3X3, 
+  LayoutGrid, 
   List, 
   Upload, 
   Plus, 
   Download, 
   Trash2, 
-  Share,
+  Share2,
   MoreHorizontal,
   Filter,
   SortAsc,
@@ -139,7 +139,7 @@ export function FileManagerHeader({
           {selectedCount > 0 && (
             <>
               <Button variant="outline" size="sm" onClick={onShareSelected}>
-                <Share className="h-4 w-4 mr-2" />
+                <Share2 className="h-4 w-4 mr-2" />
                 Share ({selectedCount})
               </Button>
               <Button variant="outline" size="sm" onClick={onDownloadSelected}>
@@ -164,7 +164,7 @@ export function FileManagerHeader({
               }`}
               aria-label="Grid view"
             >
-              <Grid3X3 className={`h-4 w-4 ${viewMode === 'grid' ? 'text-[#605BFF]' : 'text-gray-400'}`} />
+              <LayoutGrid className={`h-4 w-4 ${viewMode === 'grid' ? 'text-[#605BFF]' : 'text-gray-400'}`} />
             </button>
             <button
               onClick={() => onViewModeChange('list')}
