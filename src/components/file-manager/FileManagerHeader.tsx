@@ -70,9 +70,9 @@ export function FileManagerHeader({
   };
 
   return (
-    <div className="bg-background">
+    <div className="border-b border-border bg-background">
       {/* Breadcrumbs */}
-      <div className="px-6 py-3 border-b border-border">
+      <div className="px-6 py-3">
         <nav className="flex items-center space-x-2 text-sm">
           {breadcrumbs.map((crumb, index) => (
             <div key={crumb.id || 'root'} className="flex items-center">
