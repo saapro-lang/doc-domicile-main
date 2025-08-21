@@ -132,13 +132,11 @@ export function FileManagerHeader({
     {/* 增加升降按钮项 */}
     <DropdownMenuSeparator />
     <DropdownMenuItem
-      onClick={() => setSortOrder('asc')}
       className={sortOrder === 'asc' ? 'font-semibold' : ''}
     >
       Increase {sortOrder === 'asc' && '✓'}
     </DropdownMenuItem>
     <DropdownMenuItem
-      onClick={() => setSortOrder('desc')}
       className={sortOrder === 'desc' ? 'font-semibold' : ''}
     >
       Decrease {sortOrder === 'desc' && '✓'}
