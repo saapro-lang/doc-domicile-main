@@ -3,7 +3,7 @@ import {
   FileText, 
   Folder, 
   MoreVertical, 
-  Share, 
+  Share2, 
   Download, 
   Trash2, 
   Edit, 
@@ -102,7 +102,7 @@ export function FileGrid({
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48">
                   <DropdownMenuItem onClick={() => onItemShare(item.id)}>
-                    <Share className="h-4 w-4 mr-2" />
+                    <Share2 className="h-4 w-4 mr-2" />
                     Share
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => onItemDownload(item.id)}>
@@ -197,7 +197,7 @@ export function FileGrid({
                 <p className="truncate">{item.modifiedBy}</p>
                 {item.isShared && (
                   <div className="flex items-center justify-center">
-                    <Share className="w-3 h-3" />
+                    <Share2 className="w-3 h-3" />
                   </div>
                 )}
               </div>
