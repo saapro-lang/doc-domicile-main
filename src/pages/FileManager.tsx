@@ -298,7 +298,7 @@ export function FileManager() {
         </div>
       </header>
       <div className="flex flex-1">
-        <div className="w-80 border-r border-border shrink-0 bg-white">
+        <div className="w-80 border shrink-0 bg-white">
           <FileManagerSidebar
             teams={mockTeams}
             currentTeam={currentTeam}
