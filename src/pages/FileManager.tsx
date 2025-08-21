@@ -291,7 +291,7 @@ export function FileManager() {
             <div className="space-y-2">
               <h1 className="text-2xl font-bold text-gray-900">Transcript Folder</h1>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Your description or subtitle here.
+                Easily and efficiently manage your transcript files.
               </p>
             </div>
           </div>
