@@ -284,6 +284,20 @@ export function FileManager() {
 
   return (
     <div className="min-h-screen w-full bg-background flex">
+      {/* Header */}
+      <header className="bg-white px-6 py-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-8">
+            <div className="space-y-2">
+              <h1 className="text-2xl font-bold text-gray-900">Onboarding</h1>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Welcome to SAM! This onboarding guide will help you master key features to qualify deals effectively, 
+            focus on high-priority opportunities, and close more deals faster. Let's get started!
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
       <div className="w-80 border-r border-border shrink-0 bg-white">
         <FileManagerSidebar
           teams={mockTeams}
