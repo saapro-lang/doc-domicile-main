@@ -6,9 +6,7 @@ import { FileList } from "@/components/file-manager/FileList";
 import { FileItem, FolderNode, Team, ViewMode, SortBy, SortOrder } from "@/types/fileManager";
 import { sortItems, generateId } from "@/lib/fileUtils";
 import { useToast } from "@/hooks/use-toast";
-import { Button } from "@/components/ui/button";
-Plus, Upload
-import { Plus, Upload } from "lucide-react";
+
 // Mock data
 const mockTeams: Team[] = [
   { id: "team1", name: "Design Team", memberCount: 8, isPublic: false },
@@ -285,111 +283,72 @@ export function FileManager() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-background flex flex-col">
-      {/* Header */}
-      <header className="bg-white px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-8">
-            <div className="space-y-2">
-              <h1 className="text-2xl font-bold text-gray-900">Transcript Folder</h1>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Easily and efficiently manage your transcript files.
-              </p>
-            </div>
-          </div>
-          {/* Action Buttons */}
-          <Button onClick={onUploadFile} size="sm" className="gap-2 bg-white border border-black text-black hover:bg-black hover:text-white">
-            <Upload className="h-4 w-4" />
-            Import
-          </Button>
-          
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button size="sm" className="gap-2 bg-[#605BFF] hover:bg-[#4B46CC]">
-                <Plus className="h-4 w-4" />
-                New
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={onCreateFolder}>
-                <Plus className="h-4 w-4 mr-2" />
-                New Folder
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={onUploadFile}>
-                <Upload className="h-4 w-4 mr-2" />
-                Upload File
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-      </header>
-      <div className="flex flex-1">
-        <div className="w-80 border-r border-border shrink-0 bg-white">
-          <FileManagerSidebar
-            teams={mockTeams}
-            currentTeam={currentTeam}
-            onTeamSelect={setCurrentTeam}
-            folderTree={folderTree}
-            currentFolderId={currentFolderId}
-            onFolderSelect={setCurrentFolderId}
-            onCreateFolder={handleCreateFolder}
-          />
-        </div>
-        
-        <main className="flex-1 flex flex-col min-w-0 overflow-hidden">
-          <FileManagerHeader
-              searchQuery={searchQuery}
-              onSearchChange={setSearchQuery}
-              viewMode={viewMode}
-              onViewModeChange={setViewMode}
-              sortBy={sortBy}
-              sortOrder={sortOrder}
-              onSortChange={(sortBy, sortOrder) => {
-                setSortBy(sortBy);
-                setSortOrder(sortOrder);
-              }}
-              selectedCount={selectedItems.size}
-              onUploadFile={() => toast({ title: "Upload", description: "File upload would be implemented here." })}
-              onCreateFolder={() => handleCreateFolder(currentFolderId, !!currentTeam)}
-              onDownloadSelected={handleBulkDownload}
-              onDeleteSelected={handleBulkDelete}
-              onShareSelected={handleBulkShare}
-              breadcrumbs={breadcrumbs}
-              onBreadcrumbClick={setCurrentFolderId}
-            />
-            
-            <div className="flex-1 overflow-auto">
-              {viewMode === 'grid' ? (
-                <FileGrid
-                  items={filteredFiles}
-                  selectedItems={selectedItems}
-                  onItemSelect={handleItemSelect}
-                  onItemDoubleClick={handleItemDoubleClick}
-                  onItemDelete={handleItemDelete}
-                  onItemShare={handleItemShare}
-                  onItemRename={handleItemRename}
-                  onItemDownload={handleItemDownload}
-                  onFolderColorChange={handleFolderColorChange}
-                />
-              ) : (
-                <FileList
-                  items={filteredFiles}
-                  selectedItems={selectedItems}
-                  sortBy={sortBy}
-                  sortOrder={sortOrder}
-                  onItemSelect={handleItemSelect}
-                  onItemDoubleClick={handleItemDoubleClick}
-                  onItemDelete={handleItemDelete}
-                  onItemShare={handleItemShare}
-                  onItemRename={handleItemRename}
-                  onItemDownload={handleItemDownload}
-                  onFolderColorChange={handleFolderColorChange}
-                  onSort={handleSort}
-                />
-              )}
-            </div>
-          </main>
+    <div className="min-h-screen w-full bg-background flex">
+      <div className="w-80 border-r border-border shrink-0 bg-sidebar">
+        <FileManagerSidebar
+          teams={mockTeams}
+          currentTeam={currentTeam}
+          onTeamSelect={setCurrentTeam}
+          folderTree={folderTree}
+          currentFolderId={currentFolderId}
+          onFolderSelect={setCurrentFolderId}
+          onCreateFolder={handleCreateFolder}
+        />
       </div>
+      
+      <main className="flex-1 flex flex-col min-w-0 overflow-hidden">
+        <FileManagerHeader
+            searchQuery={searchQuery}
+            onSearchChange={setSearchQuery}
+            viewMode={viewMode}
+            onViewModeChange={setViewMode}
+            sortBy={sortBy}
+            sortOrder={sortOrder}
+            onSortChange={(sortBy, sortOrder) => {
+              setSortBy(sortBy);
+              setSortOrder(sortOrder);
+            }}
+            selectedCount={selectedItems.size}
+            onUploadFile={() => toast({ title: "Upload", description: "File upload would be implemented here." })}
+            onCreateFolder={() => handleCreateFolder(currentFolderId, !!currentTeam)}
+            onDownloadSelected={handleBulkDownload}
+            onDeleteSelected={handleBulkDelete}
+            onShareSelected={handleBulkShare}
+            breadcrumbs={breadcrumbs}
+            onBreadcrumbClick={setCurrentFolderId}
+          />
+          
+          <div className="flex-1 overflow-auto">
+            {viewMode === 'grid' ? (
+              <FileGrid
+                items={filteredFiles}
+                selectedItems={selectedItems}
+                onItemSelect={handleItemSelect}
+                onItemDoubleClick={handleItemDoubleClick}
+                onItemDelete={handleItemDelete}
+                onItemShare={handleItemShare}
+                onItemRename={handleItemRename}
+                onItemDownload={handleItemDownload}
+                onFolderColorChange={handleFolderColorChange}
+              />
+            ) : (
+              <FileList
+                items={filteredFiles}
+                selectedItems={selectedItems}
+                sortBy={sortBy}
+                sortOrder={sortOrder}
+                onItemSelect={handleItemSelect}
+                onItemDoubleClick={handleItemDoubleClick}
+                onItemDelete={handleItemDelete}
+                onItemShare={handleItemShare}
+                onItemRename={handleItemRename}
+                onItemDownload={handleItemDownload}
+                onFolderColorChange={handleFolderColorChange}
+                onSort={handleSort}
+              />
+            )}
+          </div>
+        </main>
     </div>
   );
 }
