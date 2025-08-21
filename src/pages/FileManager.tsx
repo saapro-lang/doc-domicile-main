@@ -283,72 +283,88 @@ export function FileManager() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-background flex">
-      <div className="w-80 border-r border-border shrink-0 bg-sidebar">
-        <FileManagerSidebar
-          teams={mockTeams}
-          currentTeam={currentTeam}
-          onTeamSelect={setCurrentTeam}
-          folderTree={folderTree}
-          currentFolderId={currentFolderId}
-          onFolderSelect={setCurrentFolderId}
-          onCreateFolder={handleCreateFolder}
-        />
-      </div>
-      
-      <main className="flex-1 flex flex-col min-w-0 overflow-hidden">
-        <FileManagerHeader
-            searchQuery={searchQuery}
-            onSearchChange={setSearchQuery}
-            viewMode={viewMode}
-            onViewModeChange={setViewMode}
-            sortBy={sortBy}
-            sortOrder={sortOrder}
-            onSortChange={(sortBy, sortOrder) => {
-              setSortBy(sortBy);
-              setSortOrder(sortOrder);
-            }}
-            selectedCount={selectedItems.size}
-            onUploadFile={() => toast({ title: "Upload", description: "File upload would be implemented here." })}
-            onCreateFolder={() => handleCreateFolder(currentFolderId, !!currentTeam)}
-            onDownloadSelected={handleBulkDownload}
-            onDeleteSelected={handleBulkDelete}
-            onShareSelected={handleBulkShare}
-            breadcrumbs={breadcrumbs}
-            onBreadcrumbClick={setCurrentFolderId}
-          />
-          
-          <div className="flex-1 overflow-auto">
-            {viewMode === 'grid' ? (
-              <FileGrid
-                items={filteredFiles}
-                selectedItems={selectedItems}
-                onItemSelect={handleItemSelect}
-                onItemDoubleClick={handleItemDoubleClick}
-                onItemDelete={handleItemDelete}
-                onItemShare={handleItemShare}
-                onItemRename={handleItemRename}
-                onItemDownload={handleItemDownload}
-                onFolderColorChange={handleFolderColorChange}
-              />
-            ) : (
-              <FileList
-                items={filteredFiles}
-                selectedItems={selectedItems}
-                sortBy={sortBy}
-                sortOrder={sortOrder}
-                onItemSelect={handleItemSelect}
-                onItemDoubleClick={handleItemDoubleClick}
-                onItemDelete={handleItemDelete}
-                onItemShare={handleItemShare}
-                onItemRename={handleItemRename}
-                onItemDownload={handleItemDownload}
-                onFolderColorChange={handleFolderColorChange}
-                onSort={handleSort}
-              />
-            )}
+    <div className="min-h-screen w-full bg-background flex flex-col">
+      {/* Header */}
+      <header className="bg-white px-6 py-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-8">
+            <div className="space-y-2">
+              <h1 className="text-2xl font-bold text-gray-900">Transcript Folder</h1>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Your description or subtitle here.
+              </p>
+            </div>
           </div>
-        </main>
+        </div>
+      </header>
+
+      <div className="flex flex-1">
+        <div className="w-80 border-r border-border shrink-0 bg-sidebar">
+          <FileManagerSidebar
+            teams={mockTeams}
+            currentTeam={currentTeam}
+            onTeamSelect={setCurrentTeam}
+            folderTree={folderTree}
+            currentFolderId={currentFolderId}
+            onFolderSelect={setCurrentFolderId}
+            onCreateFolder={handleCreateFolder}
+          />
+        </div>
+        
+        <main className="flex-1 flex flex-col min-w-0 overflow-hidden">
+          <FileManagerHeader
+              searchQuery={searchQuery}
+              onSearchChange={setSearchQuery}
+              viewMode={viewMode}
+              onViewModeChange={setViewMode}
+              sortBy={sortBy}
+              sortOrder={sortOrder}
+              onSortChange={(sortBy, sortOrder) => {
+                setSortBy(sortBy);
+                setSortOrder(sortOrder);
+              }}
+              selectedCount={selectedItems.size}
+              onUploadFile={() => toast({ title: "Upload", description: "File upload would be implemented here." })}
+              onCreateFolder={() => handleCreateFolder(currentFolderId, !!currentTeam)}
+              onDownloadSelected={handleBulkDownload}
+              onDeleteSelected={handleBulkDelete}
+              onShareSelected={handleBulkShare}
+              breadcrumbs={breadcrumbs}
+              onBreadcrumbClick={setCurrentFolderId}
+            />
+            
+            <div className="flex-1 overflow-auto">
+              {viewMode === 'grid' ? (
+                <FileGrid
+                  items={filteredFiles}
+                  selectedItems={selectedItems}
+                  onItemSelect={handleItemSelect}
+                  onItemDoubleClick={handleItemDoubleClick}
+                  onItemDelete={handleItemDelete}
+                  onItemShare={handleItemShare}
+                  onItemRename={handleItemRename}
+                  onItemDownload={handleItemDownload}
+                  onFolderColorChange={handleFolderColorChange}
+                />
+              ) : (
+                <FileList
+                  items={filteredFiles}
+                  selectedItems={selectedItems}
+                  sortBy={sortBy}
+                  sortOrder={sortOrder}
+                  onItemSelect={handleItemSelect}
+                  onItemDoubleClick={handleItemDoubleClick}
+                  onItemDelete={handleItemDelete}
+                  onItemShare={handleItemShare}
+                  onItemRename={handleItemRename}
+                  onItemDownload={handleItemDownload}
+                  onFolderColorChange={handleFolderColorChange}
+                  onSort={handleSort}
+                />
+              )}
+            </div>
+          </main>
+      </div>
     </div>
   );
 }
