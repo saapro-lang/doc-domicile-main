@@ -108,6 +108,10 @@ export function FileManagerHeader({
             <>
               <Button variant="outline" size="sm" onClick={onShareSelected}>
                 <Share2 className="h-4 w-4 mr-2" />
+                Move to ({selectedCount})
+              </Button>
+              <Button variant="outline" size="sm" onClick={onShareSelected}>
+                <Share2 className="h-4 w-4 mr-2" />
                 Share ({selectedCount})
               </Button>
               <Button variant="outline" size="sm" onClick={onDownloadSelected}>
