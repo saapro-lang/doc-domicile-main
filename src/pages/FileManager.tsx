@@ -317,11 +317,11 @@ export function FileManager() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={onCreateFolder}>
+              <DropdownMenuItem>
                 <Plus className="h-4 w-4 mr-2" />
                 New Folder
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={onUploadFile}>
+              <DropdownMenuItem>
                 <Upload className="h-4 w-4 mr-2" />
                 Upload File
               </DropdownMenuItem>
