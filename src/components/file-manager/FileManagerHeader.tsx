@@ -7,7 +7,7 @@ import {
   Plus, 
   Download, 
   Trash2, 
-  Share,
+  Share2,
   MoreHorizontal,
   Filter,
   SortAsc,
