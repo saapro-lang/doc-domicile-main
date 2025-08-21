@@ -102,7 +102,7 @@ export function FileGrid({
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48">
                   <DropdownMenuItem onClick={() => onItemShare(item.id)}>
-                    <Share2 className="h-4 w-4 mr-2" />
+                    <Share2 className="h-4 w-4 mr-2 text-[#605BFF]" />
                     Share
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => onItemDownload(item.id)}>
