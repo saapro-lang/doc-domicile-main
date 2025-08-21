@@ -125,7 +125,7 @@ export function FileManagerSidebar({
                   key={team.id}
                   className={cn(
                     "flex items-center gap-3 py-2 px-3 rounded-lg cursor-pointer transition-smooth",
-                    currentTeam?.id === team.id && "bg-file-item-selected text-primary font-medium",
+                    currentTeam?.id === team.id && "text-[#605BFF] font-medium",
                     currentTeam?.id !== team.id && "hover:bg-file-item-hover"
                   )}
                   onClick={() => onTeamSelect(team)}
