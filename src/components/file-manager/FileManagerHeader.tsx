@@ -60,7 +60,7 @@ export function FileManagerHeader({
   onBreadcrumbClick,
 }: FileManagerHeaderProps) {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('list');
+  
   const handleSortClick = (newSortBy: SortBy) => {
     if (sortBy === newSortBy) {
       onSortChange(newSortBy, sortOrder === 'asc' ? 'desc' : 'asc');
