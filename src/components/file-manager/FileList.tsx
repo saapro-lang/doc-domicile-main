@@ -162,7 +162,7 @@ export function FileList({
                         )} 
                       />
                     ) : (
-                      <FileText className="w-5 h-5 text-blue-500" />
+                      <FileText className="w-5 h-5 text-[#605BFF]" />
                     )}
                     <div className="flex items-center gap-2">
                       <span className="font-medium text-foreground">{item.name}</span>
