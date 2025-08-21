@@ -87,6 +87,19 @@ const mockFiles: FileItem[] = [
     isTeamFile: true,
     teamId: "team1",
   },
+  {
+    id: "5",
+    name: "Test Folder",
+    type: "folder",
+    modifiedDate: new Date("2024-01-18"),
+    modifiedBy: "Eva Davis",
+    color: "purple",
+    isShared: false,
+    permissions: [],
+    ownerId: "user1",
+    isTeamFile: true,
+    teamId: "team2",
+  },
 ];
 
 export function FileManager() {
