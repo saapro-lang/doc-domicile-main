@@ -161,7 +161,7 @@ export function FileManagerSidebar({
               <div
                 className={cn(
                   "flex items-center gap-3 py-2 px-3 rounded-lg cursor-pointer transition-smooth",
-                  !currentFolderId && "text-[#605BFF] font-medium",
+                  !currentFolderId && "bg-file-item-selected text-primary font-medium",
                   currentFolderId && "hover:bg-file-item-hover"
                 )}
                 onClick={() => onFolderSelect(null)}
