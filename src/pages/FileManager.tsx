@@ -289,9 +289,9 @@ export function FileManager() {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8">
             <div className="space-y-2">
-              <h1 className="text-2xl font-bold text-gray-900">Your Page Title</h1>
+              <h1 className="text-2xl font-bold text-gray-900">Transcript Folder</h1>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Your description or subtitle here.
+                Easily and efficiently manage your transcript files.
               </p>
             </div>
           </div>
