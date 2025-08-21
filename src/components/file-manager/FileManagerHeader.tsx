@@ -187,7 +187,7 @@ export function FileManagerHeader({
           
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button size="sm" className="gap-2 bg-[#605BFF]">
+              <Button size="sm" className="gap-2 bg-[#605BFF] hover:bg-[#4B46CC]">
                 <Plus className="h-4 w-4" />
                 New
               </Button>
