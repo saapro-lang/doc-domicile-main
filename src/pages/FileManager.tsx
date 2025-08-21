@@ -296,7 +296,7 @@ export function FileManager() {
             </div>
           </div>
           <div>
-            <Button onClick={onUploadFile} size="sm" className="gap-2 bg-white text-black border border-black hover:bg-black hover:text-white">
+            <Button size="sm" className="gap-2 bg-white text-black border border-black hover:bg-black hover:text-white">
               <Upload className="h-4 w-4" />
               Import
             </Button>
@@ -309,11 +309,11 @@ export function FileManager() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={onCreateFolder}>
+                <DropdownMenuItem>
                   <Plus className="h-4 w-4 mr-2" />
                   New Folder
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={onUploadFile}>
+                <DropdownMenuItem>
                   <Upload className="h-4 w-4 mr-2" />
                   Upload File
                 </DropdownMenuItem>
