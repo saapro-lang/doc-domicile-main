@@ -88,7 +88,7 @@ const mockFiles: FileItem[] = [
     teamId: "team1",
   },
   {
-    id: "5",
+    id: "6",
     name: "Test Folder",
     type: "folder",
     modifiedDate: new Date("2024-01-18"),
