@@ -126,7 +126,7 @@ export function FileManagerHeader({
            {/* Sort & Filter */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm" className="gap-2 flex items-center">
+              <Button variant="outline" size="sm" className="gap-2 flex items-center border border-white">
                 {sortOrder === 'asc' ? (
                   <SortAsc className="h-4 w-4" />
                 ) : (
