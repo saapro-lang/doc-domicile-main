@@ -106,43 +106,43 @@ export function FileManagerHeader({
 
           {/* Sort & Filter */}
           <DropdownMenu>
-  <DropdownMenuTrigger asChild>
-    <Button variant="outline" size="sm" className="gap-2 flex items-center">
-      {sortOrder === 'asc' ? (
-        <SortAsc className="h-4 w-4" />
-      ) : (
-        <SortDesc className="h-4 w-4" />
-      )}
-      Sort
-    </Button>
-  </DropdownMenuTrigger>
-  <DropdownMenuContent align="start" className="w-48">
-    <DropdownMenuItem onClick={() => handleSortClick('name')}>
-      Sort by Name {sortBy === 'name' && '✓'}
-    </DropdownMenuItem>
-    <DropdownMenuItem onClick={() => handleSortClick('modified')}>
-      Sort by Modified {sortBy === 'modified' && '✓'}
-    </DropdownMenuItem>
-    <DropdownMenuItem onClick={() => handleSortClick('size')}>
-      Sort by Size {sortBy === 'size' && '✓'}
-    </DropdownMenuItem>
-    <DropdownMenuItem onClick={() => handleSortClick('type')}>
-      Sort by Type {sortBy === 'type' && '✓'}
-    </DropdownMenuItem>
-    {/* 增加升降按钮项 */}
-    <DropdownMenuSeparator />
-    <DropdownMenuItem
-      className={sortOrder === 'asc' ? 'font-semibold' : ''}
-    >
-      Increase {sortOrder === 'asc' && '✓'}
-    </DropdownMenuItem>
-    <DropdownMenuItem
-      className={sortOrder === 'desc' ? 'font-semibold' : ''}
-    >
-      Decrease {sortOrder === 'desc' && '✓'}
-    </DropdownMenuItem>
-  </DropdownMenuContent>
-</DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="sm" className="gap-2 flex items-center">
+                {sortOrder === 'asc' ? (
+                  <SortAsc className="h-4 w-4" />
+                ) : (
+                  <SortDesc className="h-4 w-4" />
+                )}
+                Sort
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" className="w-48">
+              <DropdownMenuItem onClick={() => handleSortClick('name')}>
+                Sort by Name {sortBy === 'name' && '✓'}
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => handleSortClick('modified')}>
+                Sort by Modified {sortBy === 'modified' && '✓'}
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => handleSortClick('size')}>
+                Sort by Size {sortBy === 'size' && '✓'}
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => handleSortClick('type')}>
+                Sort by Type {sortBy === 'type' && '✓'}
+              </DropdownMenuItem>
+              {/* 增加升降按钮项 */}
+              <DropdownMenuSeparator />
+              <DropdownMenuItem
+                className={sortOrder === 'asc' ? 'font-semibold' : ''}
+              >
+                Increase {sortOrder === 'asc' && '✓'}
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                className={sortOrder === 'desc' ? 'font-semibold' : ''}
+              >
+                Decrease {sortOrder === 'desc' && '✓'}
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
 
         <div className="flex items-center gap-2">
