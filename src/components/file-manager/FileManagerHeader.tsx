@@ -70,7 +70,7 @@ export function FileManagerHeader({
   };
 
   return (
-    <div className="border-b border-border bg-background">
+    <div className="bg-background">
       {/* Breadcrumbs */}
       <div className="px-6 py-3 border-b border-border">
         <nav className="flex items-center space-x-2 text-sm">
