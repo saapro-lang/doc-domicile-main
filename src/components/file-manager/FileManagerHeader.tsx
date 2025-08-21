@@ -155,23 +155,25 @@ export function FileManagerHeader({
 
           {/* View Mode Toggle */}
           <div className="flex border border-border rounded-lg p-1 bg-secondary/50">
-            <Button
-              variant={viewMode === 'grid' ? 'default' : 'ghost'}
-              size="sm"
-              onClick={() => onViewModeChange('grid')}
-              className="h-8 w-8 p-0"
-            >
-              <Grid3X3 className="h-4 w-4" />
-            </Button>
-            <Button
-              variant={viewMode === 'list' ? 'default' : 'ghost'}
-              size="sm"
-              onClick={() => onViewModeChange('list')}
-              className="h-8 w-8 p-0"
-            >
-              <List className="h-4 w-4" />
-            </Button>
-          </div>
+  <button
+    onClick={() => onViewModeChange('grid')}
+    className={`h-8 w-8 p-0 flex items-center justify-center rounded ${
+      viewMode === 'grid' ? 'bg-white shadow-sm' : 'hover:bg-gray-100'
+    }`}
+    aria-label="Grid view"
+  >
+    <Grid3X3 className="h-4 w-4" />
+  </button>
+  <button
+    onClick={() => onViewModeChange('list')}
+    className={`h-8 w-8 p-0 flex items-center justify-center rounded ${
+      viewMode === 'list' ? 'bg-white shadow-sm' : 'hover:bg-gray-100'
+    }`}
+    aria-label="List view"
+  >
+    <List className="h-4 w-4" />
+  </button>
+</div>
 
           {/* Action Buttons */}
           <Button onClick={onUploadFile} size="sm" className="gap-2">
