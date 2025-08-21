@@ -1,0 +1,204 @@
+import { useState } from "react";
+import { 
+  Search, 
+  Grid3X3, 
+  List, 
+  Upload, 
+  Plus, 
+  Download, 
+  Trash2, 
+  Share,
+  MoreHorizontal,
+  Filter,
+  SortAsc,
+  SortDesc
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { ViewMode, SortBy, SortOrder } from "@/types/fileManager";
+
+interface FileManagerHeaderProps {
+  searchQuery: string;
+  onSearchChange: (query: string) => void;
+  viewMode: ViewMode;
+  onViewModeChange: (mode: ViewMode) => void;
+  sortBy: SortBy;
+  sortOrder: SortOrder;
+  onSortChange: (sortBy: SortBy, sortOrder: SortOrder) => void;
+  selectedCount: number;
+  onUploadFile: () => void;
+  onCreateFolder: () => void;
+  onDownloadSelected: () => void;
+  onDeleteSelected: () => void;
+  onShareSelected: () => void;
+  breadcrumbs: Array<{ id: string | null; name: string; }>;
+  onBreadcrumbClick: (id: string | null) => void;
+}
+
+export function FileManagerHeader({
+  searchQuery,
+  onSearchChange,
+  viewMode,
+  onViewModeChange,
+  sortBy,
+  sortOrder,
+  onSortChange,
+  selectedCount,
+  onUploadFile,
+  onCreateFolder,
+  onDownloadSelected,
+  onDeleteSelected,
+  onShareSelected,
+  breadcrumbs,
+  onBreadcrumbClick,
+}: FileManagerHeaderProps) {
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+
+  const handleSortClick = (newSortBy: SortBy) => {
+    if (sortBy === newSortBy) {
+      onSortChange(newSortBy, sortOrder === 'asc' ? 'desc' : 'asc');
+    } else {
+      onSortChange(newSortBy, 'asc');
+    }
+  };
+
+  return (
+    <div className="border-b border-border bg-background">
+      {/* Breadcrumbs */}
+      <div className="px-6 py-3 border-b border-border">
+        <nav className="flex items-center space-x-2 text-sm">
+          {breadcrumbs.map((crumb, index) => (
+            <div key={crumb.id || 'root'} className="flex items-center">
+              {index > 0 && <span className="text-muted-foreground mx-2">/</span>}
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => onBreadcrumbClick(crumb.id)}
+                className="h-auto p-1 font-medium text-foreground hover:text-primary"
+              >
+                {crumb.name}
+              </Button>
+            </div>
+          ))}
+        </nav>
+      </div>
+
+      {/* Main Header */}
+      <div className="flex items-center justify-between px-6 py-4">
+        <div className="flex items-center gap-4 flex-1">
+          {/* Search */}
+          <div className="relative w-80">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Input
+              placeholder="Search files and folders..."
+              value={searchQuery}
+              onChange={(e) => onSearchChange(e.target.value)}
+              className="pl-10 bg-secondary/50 border-border focus:bg-background transition-smooth"
+            />
+          </div>
+
+          {/* Sort & Filter */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="sm" className="gap-2">
+                <Filter className="h-4 w-4" />
+                Sort & Filter
+                {sortOrder === 'asc' ? (
+                  <SortAsc className="h-4 w-4" />
+                ) : (
+                  <SortDesc className="h-4 w-4" />
+                )}
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" className="w-48">
+              <DropdownMenuItem onClick={() => handleSortClick('name')}>
+                Sort by Name {sortBy === 'name' && '✓'}
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => handleSortClick('modified')}>
+                Sort by Modified {sortBy === 'modified' && '✓'}
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => handleSortClick('size')}>
+                Sort by Size {sortBy === 'size' && '✓'}
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => handleSortClick('type')}>
+                Sort by Type {sortBy === 'type' && '✓'}
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+
+        <div className="flex items-center gap-2">
+          {/* Bulk Actions (shown when items are selected) */}
+          {selectedCount > 0 && (
+            <>
+              <Button variant="outline" size="sm" onClick={onShareSelected}>
+                <Share className="h-4 w-4 mr-2" />
+                Share ({selectedCount})
+              </Button>
+              <Button variant="outline" size="sm" onClick={onDownloadSelected}>
+                <Download className="h-4 w-4 mr-2" />
+                Download
+              </Button>
+              <Button variant="outline" size="sm" onClick={onDeleteSelected}>
+                <Trash2 className="h-4 w-4 mr-2" />
+                Delete
+              </Button>
+            </>
+          )}
+
+          {/* View Mode Toggle */}
+          <div className="flex border border-border rounded-lg p-1 bg-secondary/50">
+            <Button
+              variant={viewMode === 'grid' ? 'default' : 'ghost'}
+              size="sm"
+              onClick={() => onViewModeChange('grid')}
+              className="h-8 w-8 p-0"
+            >
+              <Grid3X3 className="h-4 w-4" />
+            </Button>
+            <Button
+              variant={viewMode === 'list' ? 'default' : 'ghost'}
+              size="sm"
+              onClick={() => onViewModeChange('list')}
+              className="h-8 w-8 p-0"
+            >
+              <List className="h-4 w-4" />
+            </Button>
+          </div>
+
+          {/* Action Buttons */}
+          <Button onClick={onUploadFile} size="sm" className="gap-2">
+            <Upload className="h-4 w-4" />
+            Upload
+          </Button>
+          
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button size="sm" className="gap-2">
+                <Plus className="h-4 w-4" />
+                New
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={onCreateFolder}>
+                <Plus className="h-4 w-4 mr-2" />
+                New Folder
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={onUploadFile}>
+                <Upload className="h-4 w-4 mr-2" />
+                Upload File
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+      </div>
+    </div>
+  );
+}
