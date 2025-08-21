@@ -124,8 +124,8 @@ export function FileList({
               />
             </TableHead>
             <SortableHeader column="name">Name</SortableHeader>
-            <SortableHeader column="modified">Modified</SortableHeader>
-            <TableHead>Modified By</TableHead>
+            <SortableHeader column="modified">Uploaded</SortableHeader>
+            <TableHead>Uploaded By</TableHead>
             <SortableHeader column="size">Size</SortableHeader>
             <TableHead className="w-12"></TableHead>
           </TableRow>
