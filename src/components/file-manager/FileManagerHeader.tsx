@@ -180,7 +180,7 @@ export function FileManagerHeader({
           </div>
 
           {/* Action Buttons */}
-          <Button onClick={onUploadFile} size="sm" className="gap-2">
+          <Button onClick={onUploadFile} size="sm" className="gap-2 bg-white">
             <Upload className="h-4 w-4" />
             Upload
           </Button>
