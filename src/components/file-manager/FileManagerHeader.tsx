@@ -122,7 +122,7 @@ export function FileManagerHeader({
           )}
         </div>
 
-        <div className="flex space-x-4 items-center gap-2">
+        <div className="flex space-x-2 items-center gap-2">
            {/* Sort & Filter */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
