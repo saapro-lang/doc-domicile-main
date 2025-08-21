@@ -284,7 +284,7 @@ export function FileManager() {
 
   return (
     <div className="min-h-screen w-full bg-background flex">
-      <div className="w-80 border-r border-border shrink-0 bg-sidebar">
+      <div className="w-80 border-r border-border shrink-0 bg-white">
         <FileManagerSidebar
           teams={mockTeams}
           currentTeam={currentTeam}
