@@ -46,7 +46,7 @@ export function FileManagerSidebar({
         <div 
           className={cn(
             "flex items-center w-full transition-smooth rounded-lg cursor-pointer py-2 px-2 mx-2 my-1",
-            isSelected && "bg-file-item-selected text-primary font-medium",
+            isSelected && "text-[#605BFF] font-medium",
             !isSelected && "hover:bg-file-item-hover"
           )}
           style={{ paddingLeft: `${depth * 12 + 8}px` }}
