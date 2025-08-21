@@ -112,7 +112,7 @@ export function FileManagerSidebar({
               <div
                 className={cn(
                   "flex items-center gap-3 py-2 px-3 rounded-lg cursor-pointer transition-smooth",
-                  !currentTeam && "bg-file-item-selected text-primary font-medium",
+                  !currentTeam && "text-[#605BFF] font-medium",
                   currentTeam && "hover:bg-file-item-hover"
                 )}
                 onClick={() => onTeamSelect(null)}
