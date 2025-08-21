@@ -102,7 +102,7 @@ export function FileGrid({
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48">
                   <DropdownMenuItem onClick={() => onItemShare(item.id)}>
-                    <Share2 className="h-4 w-4 mr-2 text-[#605BFF]" />
+                    <Share2 className="h-4 w-4 mr-2" />
                     Share
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => onItemDownload(item.id)}>
@@ -197,7 +197,7 @@ export function FileGrid({
                 <p className="truncate">{item.modifiedBy}</p>
                 {item.isShared && (
                   <div className="flex items-center justify-center">
-                    <Share2 className="w-3 h-3" />
+                    <Share2 className="w-3 h-3 text-[#605BFF]" />
                   </div>
                 )}
               </div>
