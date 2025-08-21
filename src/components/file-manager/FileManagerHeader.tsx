@@ -190,7 +190,7 @@ export function FileManagerHeader({
           </div>
 
           {/* Action Buttons */}
-          {/*<Button onClick={onUploadFile} size="sm" className="gap-2 bg-white text-black border border-black hover:bg-black hover:text-white">
+          <Button onClick={onUploadFile} size="sm" className="gap-2 bg-white text-black border border-black hover:bg-black hover:text-white">
             <Upload className="h-4 w-4" />
             Import
           </Button>
@@ -212,7 +212,7 @@ export function FileManagerHeader({
                 Upload File
               </DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu>*/}
+          </DropdownMenu>
         </div>
       </div>
     </div>
