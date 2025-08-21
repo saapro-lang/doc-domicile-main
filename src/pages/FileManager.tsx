@@ -7,6 +7,7 @@ import { FileItem, FolderNode, Team, ViewMode, SortBy, SortOrder } from "@/types
 import { sortItems, generateId } from "@/lib/fileUtils";
 import { useToast } from "@/hooks/use-toast";
 import { Plus, Upload } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
