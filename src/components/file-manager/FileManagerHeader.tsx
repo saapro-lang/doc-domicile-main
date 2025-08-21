@@ -138,7 +138,7 @@ export function FileManagerHeader({
           {selectedCount > 0 && (
             <>
               <Button variant="outline" size="sm" onClick={onShareSelected}>
-                <Share className="h-4 w-4 mr-2" />
+                <Share2 className="h-4 w-4 mr-2" />
                 Share ({selectedCount})
               </Button>
               <Button variant="outline" size="sm" onClick={onDownloadSelected}>
