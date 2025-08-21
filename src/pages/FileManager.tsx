@@ -111,7 +111,7 @@ const mockFiles: FileItem[] = [
     permissions: [],
     ownerId: "user1",
     isTeamFile: true,
-    teamId: "team2",
+    teamId: "team1",
   },
   {
     id: "8",
@@ -124,7 +124,7 @@ const mockFiles: FileItem[] = [
     permissions: [],
     ownerId: "user1",
     isTeamFile: true,
-    teamId: "team2",
+    teamId: "team1",
   },
 ];
 
