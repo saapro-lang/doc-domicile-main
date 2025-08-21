@@ -295,6 +295,30 @@ export function FileManager() {
               </p>
             </div>
           </div>
+          {/* Action Buttons */}
+          <Button onClick={onUploadFile} size="sm" className="gap-2 bg-white border border-black text-black hover:bg-black hover:text-white">
+            <Upload className="h-4 w-4" />
+            Import
+          </Button>
+          
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button size="sm" className="gap-2 bg-[#605BFF] hover:bg-[#4B46CC]">
+                <Plus className="h-4 w-4" />
+                New
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={onCreateFolder}>
+                <Plus className="h-4 w-4 mr-2" />
+                New Folder
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={onUploadFile}>
+                <Upload className="h-4 w-4 mr-2" />
+                Upload File
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </header>
       <div className="flex flex-1">
