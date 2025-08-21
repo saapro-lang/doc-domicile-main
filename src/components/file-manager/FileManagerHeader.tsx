@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { 
   Search, 
-  LayoutGrid, 
+  Grid3X3, 
   List, 
   Upload, 
   Plus, 
   Download, 
   Trash2, 
-  Share2,
+  Share,
   MoreHorizontal,
   Filter,
   SortAsc,
@@ -72,7 +72,7 @@ export function FileManagerHeader({
   return (
     <div className="border-b border-border bg-background">
       {/* Breadcrumbs */}
-      <div className="px-6 py-3">
+      <div className="px-6 py-3 border-b border-border">
         <nav className="flex items-center space-x-2 text-sm">
           {breadcrumbs.map((crumb, index) => (
             <div key={crumb.id || 'root'} className="flex items-center">
@@ -108,12 +108,13 @@ export function FileManagerHeader({
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="sm" className="gap-2">
+                <Filter className="h-4 w-4" />
+                Sort & Filter
                 {sortOrder === 'asc' ? (
                   <SortAsc className="h-4 w-4" />
                 ) : (
                   <SortDesc className="h-4 w-4" />
                 )}
-                Sort
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-48">
@@ -138,7 +139,7 @@ export function FileManagerHeader({
           {selectedCount > 0 && (
             <>
               <Button variant="outline" size="sm" onClick={onShareSelected}>
-                <Share2 className="h-4 w-4 mr-2" />
+                <Share className="h-4 w-4 mr-2" />
                 Share ({selectedCount})
               </Button>
               <Button variant="outline" size="sm" onClick={onDownloadSelected}>
@@ -163,7 +164,7 @@ export function FileManagerHeader({
               }`}
               aria-label="Grid view"
             >
-              <LayoutGrid className={`h-4 w-4 ${viewMode === 'grid' ? 'text-[#605BFF]' : 'text-gray-400'}`} />
+              <Grid3X3 className={`h-4 w-4 ${viewMode === 'grid' ? 'text-[#605BFF]' : 'text-gray-400'}`} />
             </button>
             <button
               onClick={() => onViewModeChange('list')}
@@ -177,6 +178,31 @@ export function FileManagerHeader({
               <List className={`h-4 w-4 ${viewMode === 'list' ? 'text-[#605BFF]' : 'text-gray-400'}`} />
             </button>
           </div>
+
+          {/* Action Buttons */}
+          <Button onClick={onUploadFile} size="sm" className="gap-2">
+            <Upload className="h-4 w-4" />
+            Upload
+          </Button>
+          
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button size="sm" className="gap-2">
+                <Plus className="h-4 w-4" />
+                New
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={onCreateFolder}>
+                <Plus className="h-4 w-4 mr-2" />
+                New Folder
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={onUploadFile}>
+                <Upload className="h-4 w-4 mr-2" />
+                Upload File
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </div>
