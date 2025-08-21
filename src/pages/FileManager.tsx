@@ -6,7 +6,7 @@ import { FileList } from "@/components/file-manager/FileList";
 import { FileItem, FolderNode, Team, ViewMode, SortBy, SortOrder } from "@/types/fileManager";
 import { sortItems, generateId } from "@/lib/fileUtils";
 import { useToast } from "@/hooks/use-toast";
-
+import { Plus, Upload } from "lucide-react";
 // Mock data
 const mockTeams: Team[] = [
   { id: "team1", name: "Design Team", memberCount: 8, isPublic: false },
