@@ -303,7 +303,7 @@ export function FileManager() {
               </p>
             </div>
           </div>
-          <div>
+          <div className="gap-4">
             <Button size="sm" className="gap-2 bg-white text-black border border-black hover:bg-black hover:text-white">
               <Upload className="h-4 w-4" />
               Import
