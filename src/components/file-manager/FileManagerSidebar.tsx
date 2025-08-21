@@ -166,7 +166,7 @@ export function FileManagerSidebar({
                 )}
                 onClick={() => onFolderSelect(null)}
               >
-                <FolderOpen className="h-4 w-4 text-primary" />
+                <FolderOpen className="h-4 w-4 text-[#605BFF]" />
                 <span>All Files</span>
               </div>
               {folderTree.map((node) => renderFolderNode(node))}
