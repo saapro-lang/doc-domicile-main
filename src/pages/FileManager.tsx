@@ -6,7 +6,7 @@ import { FileList } from "@/components/file-manager/FileList";
 import { FileItem, FolderNode, Team, ViewMode, SortBy, SortOrder, Plus, Upload } from "@/types/fileManager";
 import { sortItems, generateId } from "@/lib/fileUtils";
 import { useToast } from "@/hooks/use-toast";
-
+import { Button } from "@/components/ui/button";
 // Mock data
 const mockTeams: Team[] = [
   { id: "team1", name: "Design Team", memberCount: 8, isPublic: false },
