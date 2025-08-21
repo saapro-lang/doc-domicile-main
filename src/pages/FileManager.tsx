@@ -7,6 +7,13 @@ import { FileItem, FolderNode, Team, ViewMode, SortBy, SortOrder } from "@/types
 import { sortItems, generateId } from "@/lib/fileUtils";
 import { useToast } from "@/hooks/use-toast";
 import { Plus, Upload } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 // Mock data
 const mockTeams: Team[] = [
   { id: "team1", name: "Design Team", memberCount: 8, isPublic: false },
