@@ -3,10 +3,12 @@ import { FileManagerSidebar } from "@/components/file-manager/FileManagerSidebar
 import { FileManagerHeader } from "@/components/file-manager/FileManagerHeader";
 import { FileGrid } from "@/components/file-manager/FileGrid";
 import { FileList } from "@/components/file-manager/FileList";
-import { FileItem, FolderNode, Team, ViewMode, SortBy, SortOrder, Plus, Upload } from "@/types/fileManager";
+import { FileItem, FolderNode, Team, ViewMode, SortBy, SortOrder } from "@/types/fileManager";
 import { sortItems, generateId } from "@/lib/fileUtils";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
+Plus, Upload
+import { Plus, Upload } from "lucide-react";
 // Mock data
 const mockTeams: Team[] = [
   { id: "team1", name: "Design Team", memberCount: 8, isPublic: false },
