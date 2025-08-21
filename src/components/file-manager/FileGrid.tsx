@@ -173,7 +173,7 @@ export function FileGrid({
                   <Folder 
                     className={cn(
                       "w-10 h-10",
-                      item.color ? `text-folder-${item.color}` : "text-primary"
+                      item.color ? `text-${item.color}` : "text-primary"
                     )} 
                   />
                 ) : (
