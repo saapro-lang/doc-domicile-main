@@ -103,8 +103,27 @@ export function FileManagerHeader({
               className="pl-10 bg-secondary/50 border-border focus:bg-background transition-smooth"
             />
           </div>
+          {/* Bulk Actions (shown when items are selected) */}
+          {selectedCount > 0 && (
+            <>
+              <Button variant="outline" size="sm" onClick={onShareSelected}>
+                <Share2 className="h-4 w-4 mr-2" />
+                Share ({selectedCount})
+              </Button>
+              <Button variant="outline" size="sm" onClick={onDownloadSelected}>
+                <Download className="h-4 w-4 mr-2" />
+                Download
+              </Button>
+              <Button variant="outline" size="sm" onClick={onDeleteSelected}>
+                <Trash2 className="h-4 w-4 mr-2" />
+                Delete
+              </Button>
+            </>
+          )}
+        </div>
 
-          {/* Sort & Filter */}
+        <div className="flex items-center gap-2">
+           {/* Sort & Filter */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="sm" className="gap-2 flex items-center">
@@ -143,27 +162,7 @@ export function FileManagerHeader({
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-        </div>
-
-        <div className="flex items-center gap-2">
-          {/* Bulk Actions (shown when items are selected) */}
-          {selectedCount > 0 && (
-            <>
-              <Button variant="outline" size="sm" onClick={onShareSelected}>
-                <Share2 className="h-4 w-4 mr-2" />
-                Share ({selectedCount})
-              </Button>
-              <Button variant="outline" size="sm" onClick={onDownloadSelected}>
-                <Download className="h-4 w-4 mr-2" />
-                Download
-              </Button>
-              <Button variant="outline" size="sm" onClick={onDeleteSelected}>
-                <Trash2 className="h-4 w-4 mr-2" />
-                Delete
-              </Button>
-            </>
-          )}
-
+          
           {/* View Mode Toggle */}
           <div className="flex border border-border rounded-lg p-1 bg-secondary/50 space-x-2">
             <button
