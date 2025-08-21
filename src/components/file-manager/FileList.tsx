@@ -127,6 +127,7 @@ export function FileList({
             <SortableHeader column="modified">Uploaded</SortableHeader>
             <TableHead>Uploaded By</TableHead>
             <SortableHeader column="size">Size</SortableHeader>
+            <TableHead>Shared By</TableHead>
             <TableHead className="w-12"></TableHead>
           </TableRow>
         </TableHeader>
