@@ -155,29 +155,29 @@ export function FileManagerHeader({
 
           {/* View Mode Toggle */}
           <div className="flex border border-border rounded-lg p-1 bg-secondary/50 space-x-2">
-  <button
-    onClick={() => onViewModeChange('grid')}
-    className={`h-8 w-8 p-0 flex items-center justify-center rounded-full transition-colors ${
-      viewMode === 'grid'
-        ? 'bg-white shadow-sm'
-        : 'bg-transparent hover:bg-gray-100'
-    }`}
-    aria-label="Grid view"
-  >
-    <Grid3X3 className={`h-4 w-4 ${viewMode === 'grid' ? 'text-[#605BFF]' : 'text-gray-400'}`} />
-  </button>
-  <button
-    onClick={() => onViewModeChange('list')}
-    className={`h-8 w-8 p-0 flex items-center justify-center rounded-full transition-colors ${
-      viewMode === 'list'
-        ? 'bg-white shadow-sm'
-        : 'bg-transparent hover:bg-gray-100'
-    }`}
-    aria-label="List view"
-  >
-    <List className={`h-4 w-4 ${viewMode === 'list' ? 'text-[#605BFF]' : 'text-gray-400'}`} />
-  </button>
-</div>
+            <button
+              onClick={() => onViewModeChange('grid')}
+              className={`h-8 w-8 p-0 flex items-center justify-center rounded-full transition-colors ${
+                viewMode === 'grid'
+                  ? 'bg-white shadow-sm'
+                  : 'bg-transparent hover:bg-gray-100'
+              }`}
+              aria-label="Grid view"
+            >
+              <Grid3X3 className={`h-4 w-4 ${viewMode === 'grid' ? 'text-[#605BFF]' : 'text-gray-400'}`} />
+            </button>
+            <button
+              onClick={() => onViewModeChange('list')}
+              className={`h-8 w-8 p-0 flex items-center justify-center rounded-full transition-colors ${
+                viewMode === 'list'
+                  ? 'bg-white shadow-sm'
+                  : 'bg-transparent hover:bg-gray-100'
+              }`}
+              aria-label="List view"
+            >
+              <List className={`h-4 w-4 ${viewMode === 'list' ? 'text-[#605BFF]' : 'text-gray-400'}`} />
+            </button>
+          </div>
 
           {/* Action Buttons */}
           <Button onClick={onUploadFile} size="sm" className="gap-2">
